@@ -1,0 +1,545 @@
+.sidebar {
+  width: var(--sidebar-width, 280px);
+  min-width: var(--sidebar-width, 280px);
+  height: 100vh;
+  background: linear-gradient(145deg, #2563eb 0%, #3b82f6 50%, #1d4ed8 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1050;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .sidebar:not(.sidebarCollapsed)::before {
+    opacity: 1;
+    visibility: visible;
+    z-index: -1;
+  }
+}
+
+.sidebarCollapsed {
+  width: 60px;
+  min-width: 60px;
+}
+
+.header {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  margin: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.headerCollapsed {
+  padding: 8px;
+  margin: 8px;
+  margin-bottom: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+.logoIcon {
+  opacity: 0.9;
+}
+
+.logoText {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.taskCount {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  margin-left: 28px;
+}
+
+
+
+.toggleButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-width: 36px;
+  min-height: 36px;
+  flex-shrink: 0;
+}
+
+.toggleButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.toggleButtonCollapsed {
+  background: rgba(255, 255, 255, 0.95);
+  color: #2563eb;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 6px;
+  min-width: 36px;
+  min-height: 36px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.toggleButtonCollapsed:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #1d4ed8;
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.chaptersContainer {
+  padding: 10px 0;
+  flex: 1;
+  transition: all 0.4s ease;
+}
+
+.chaptersCollapsed {
+  padding: 5px 0;
+}
+
+.chapterItem {
+  margin-bottom: 4px;
+}
+
+.chapterButton {
+  width: 100%;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.chapterButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.chapterButtonCollapsed {
+  padding: 12px;
+  justify-content: center;
+  margin: 4px 8px;
+  border-radius: 8px;
+  cursor: default;
+  opacity: 0.8;
+}
+
+.chapterButtonCollapsed:hover {
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}
+
+.chapterContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chapterIcon {
+  transition: transform 0.2s ease;
+}
+
+.chapterTitle {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.folderIcon {
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.folderIconCollapsed {
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.tasksContainer {
+  overflow: hidden;
+  padding-left: 20px;
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  margin-left: 20px;
+}
+
+.taskButton {
+  width: calc(100% - 24px);
+  padding: 14px 20px;
+  background: none;
+  border: none;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  opacity: 0.9;
+  margin: 6px 12px;
+  border-radius: 8px;
+}
+
+.taskButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+  opacity: 1;
+  transform: translateX(4px) scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.taskButton.selected {
+  background: rgba(255, 255, 255, 0.25);
+  opacity: 1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.taskNumber {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.taskContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.taskName {
+  line-height: 1.3;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.viewModeIndicator {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  align-self: flex-start;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.problemMode {
+  background: rgba(34, 197, 94, 0.9);
+  color: white;
+}
+
+.solutionMode {
+  background: rgba(245, 158, 11, 0.9);
+  color: white;
+}
+
+/* Скроллбар */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Анимации */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.taskButton {
+  animation: slideIn 0.2s ease;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .sidebar {
+    width: var(--sidebar-width, 260px);
+    min-width: var(--sidebar-width, 260px);
+  }
+  
+  .sidebarCollapsed {
+    width: 55px;
+    min-width: 55px;
+  }
+  
+  .header {
+    padding: 14px;
+    margin: 10px;
+  }
+  
+  .logoText {
+    font-size: 13px;
+  }
+  
+  .taskCount {
+    font-size: 10px;
+  }
+  
+  .chapterButton {
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+  
+  .taskButton {
+    padding: 12px 18px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: var(--sidebar-width, 240px);
+    min-width: var(--sidebar-width, 240px);
+  }
+  
+  .sidebarCollapsed {
+    width: 50px;
+    min-width: 50px;
+  }
+  
+  .header {
+    padding: 12px;
+    margin: 8px;
+  }
+  
+  .logoText {
+    font-size: 12px;
+  }
+  
+  .taskCount {
+    font-size: 9px;
+  }
+  
+  .chapterButton {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+  
+  .chapterButtonCollapsed {
+    padding: 10px;
+    margin: 3px 6px;
+  }
+  
+  .taskButton {
+    padding: 10px 16px;
+    font-size: 12px;
+    margin: 4px 10px;
+  }
+  
+  .taskNumber {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: var(--sidebar-width, 280px);
+    min-width: var(--sidebar-width, 280px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1200;
+    transform: translateX(-100%);
+  }
+  
+  .sidebar:not(.sidebarCollapsed) {
+    transform: translateX(0);
+  }
+  
+  .sidebarCollapsed {
+    transform: translateX(-100%);
+    width: 0;
+    min-width: 0;
+    opacity: 0;
+  }
+  
+  .header {
+    padding: 14px 16px;
+    margin: 12px;
+    border-radius: 10px;
+  }
+  
+  .headerCollapsed {
+    padding: 12px;
+    margin: 10px;
+  }
+  
+  .logoText {
+    font-size: 14px;
+  }
+  
+  .taskCount {
+    font-size: 11px;
+  }
+  
+  .toggleButton {
+    min-width: 40px;
+    min-height: 40px;
+    padding: 10px;
+  }
+  
+  .chapterButton {
+    padding: 16px 20px;
+    font-size: 14px;
+  }
+  
+  .taskButton {
+    padding: 14px 20px;
+    font-size: 14px;
+    margin: 6px 12px;
+  }
+  
+  .taskNumber {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100vw;
+    min-width: 100vw;
+  }
+  
+  .header {
+    padding: 12px 14px;
+    margin: 8px;
+  }
+  
+  .logoText {
+    font-size: 13px;
+  }
+  
+  .taskCount {
+    font-size: 10px;
+  }
+  
+  .toggleButton {
+    min-width: 36px;
+    min-height: 36px;
+    padding: 8px;
+  }
+  
+  .chapterButton {
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+  
+  .chapterTitle {
+    font-size: 13px;
+  }
+  
+  .taskButton {
+    padding: 12px 16px;
+    font-size: 13px;
+    margin: 4px 8px;
+    gap: 12px;
+  }
+  
+  .taskNumber {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+  
+  .viewModeIndicator {
+    font-size: 9px;
+    padding: 2px 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+  }
+} 

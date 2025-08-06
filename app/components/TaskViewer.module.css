@@ -1,0 +1,1021 @@
+.container {
+  position: fixed;
+  left: var(--sidebar-width, 280px);
+  right: var(--description-width, 0px);
+  top: 0;
+  bottom: 0;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #e2e8f0;
+}
+
+
+
+.mobileMenuButton {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1300;
+  background: #3b82f6;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  padding: 12px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileMenuButton:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+  .mobileMenuButton {
+    display: flex;
+  }
+}
+
+
+.footer {
+  background: #ffffff;
+  border-top: 1px solid #f1f5f9;
+  padding: 18px 24px;
+  flex-shrink: 0;
+}
+
+.footerControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+
+.footerSeparator {
+  width: 1px;
+  height: 24px;
+  background: #cbd5e1;
+  margin: 0 8px;
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+.filesButtonContainer {
+  position: relative;
+  z-index: 1100;
+}
+
+.footerNavButton {
+  padding: 10px 16px;
+  background: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 100px;
+}
+
+.footerNavButton:hover:not(:disabled) {
+  background: #e2e8f0;
+  color: #334155;
+  transform: scale(1.02);
+}
+
+.footerNavButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  color: #94a3b8;
+  background: #f8fafc;
+}
+
+.footerActionButton {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a;
+  background: #e2e8f0;
+}
+
+.footerActionButton:hover {
+  background: #cbd5e1;
+  color: #0f172a;
+  transform: scale(1.02);
+}
+
+.leftControls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navigationControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.navButton {
+  padding: 10px 12px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.navButton:hover:not(:disabled) {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #475569;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.actionButton {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+}
+
+.refreshButton {
+  background: #3b82f6;
+  color: white;
+}
+
+.refreshButton:hover {
+  background: #2563eb;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+.filesButton {
+  background: #10b981;
+  color: white;
+}
+
+.filesButton:hover {
+  background: #059669;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+
+
+.resetButton {
+  background: #ef4444;
+  color: white;
+}
+
+.resetButton:hover {
+  background: #dc2626;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+}
+
+.dropdown {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  border: 2px solid #3b82f6;
+  border-radius: 16px;
+  min-width: 280px;
+  z-index: 1200;
+  max-height: 360px;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 25px -5px rgba(59, 130, 246, 0.2),
+    0 10px 10px -5px rgba(59, 130, 246, 0.15),
+    0 0 0 1px rgba(59, 130, 246, 0.2);
+  backdrop-filter: blur(8px);
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .dropdown {
+    min-width: 260px;
+    max-height: 280px;
+  }
+}
+
+.dropdownItem {
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #dbeafe;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e40af;
+  position: relative;
+  min-height: 60px;
+}
+
+.dropdownItem:first-child {
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.dropdownItem:last-child {
+  border-bottom: none;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
+.dropdownItem:hover {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.dropdownItem svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.dropdownHeader {
+  padding: 16px 18px 12px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 2px solid #dbeafe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dropdownHeader svg {
+  color: #ffffff;
+}
+
+.dropdownContent {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.dropdownContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdownContent::-webkit-scrollbar-track {
+  background: #dbeafe;
+  border-radius: 3px;
+}
+
+.dropdownContent::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 3px;
+}
+
+.dropdownContent::-webkit-scrollbar-thumb:hover {
+  background: #1d4ed8;
+}
+
+.emptyDropdown {
+  padding: 20px;
+  text-align: center;
+  color: #3b82f6;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  min-height: 0;
+}
+
+.browserContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-height: 600px;
+}
+
+.browserHeader {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+  border-bottom: 1px solid #dee2e6;
+  gap: 14px;
+  min-height: 54px;
+  justify-content: space-between;
+}
+
+.browserButtons {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-right: 14px;
+  border-right: 1px solid #dee2e6;
+}
+
+.browserDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.addressBar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 6px 16px;
+  min-height: 32px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.addressContent {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  width: 100%;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.addressTopic {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2563eb;
+  white-space: nowrap;
+  flex-shrink: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.addressSeparator {
+  font-size: 14px;
+  color: #94a3b8;
+  font-weight: 500;
+  margin: 0 2px;
+  flex-shrink: 0;
+}
+
+.addressTask {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex: 1;
+}
+
+.addressMode {
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  white-space: nowrap;
+  flex-shrink: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-style: italic;
+  min-width: 0;
+}
+
+.browserControls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.browserAction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 14px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.browserAction:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #495057;
+}
+
+.refreshAction:hover {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.autoAction:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.autoActiveAction {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.autoActiveAction:hover {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.resetAction:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.browserSeparator {
+  width: 1px;
+  height: 28px;
+  background: #dee2e6;
+  margin: 0 6px;
+}
+
+.solutionAction:hover {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.newWindowAction:hover {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.descriptionAction:hover {
+  background: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+}
+
+.browserContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.iframe {
+  flex: 1;
+  border: none;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+.error {
+  padding: 20px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  color: #dc2626;
+  font-size: 14px;
+  margin: 20px;
+}
+
+.loading {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  color: #64748b;
+  font-size: 16px;
+}
+
+.emptyState {
+  padding: 60px 20px;
+  text-align: center;
+  color: #64748b;
+  font-size: 16px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@media (max-width: 1440px) {
+
+}
+
+@media (max-width: 1200px) {
+  .content {
+    padding: 12px;
+  }
+
+  .browserHeader {
+    padding: 8px 12px;
+    min-height: 48px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .browserControls {
+    gap: 4px;
+  }
+  
+  .browserAction {
+    padding: 6px 10px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  
+  .addressBar {
+    min-height: 28px;
+    padding: 4px 12px;
+    flex: 1 1 100%;
+    order: 3;
+    margin-top: 8px;
+  }
+  
+  .addressTopic {
+    font-size: 12px;
+  }
+  
+  .addressTask {
+    font-size: 12px;
+  }
+  
+  .addressMode {
+    font-size: 11px;
+  }
+  
+  .footerControls {
+    gap: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .footerNavButton {
+    flex: 1;
+    max-width: 140px;
+    padding: 10px 14px;
+    font-size: 14px;
+    min-width: 110px;
+  }
+  
+  .footerActionButton {
+    padding: 10px 16px;
+    font-size: 14px;
+    align-self: center;
+  }
+  
+  .filesButtonContainer {
+    align-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    right: 0;
+    border-left: none;
+  }
+  
+  .browserHeader {
+    padding: 8px 12px;
+    min-height: 44px;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding-left: 16px;
+    justify-content: space-between;
+  }
+  
+  .browserButtons {
+    gap: 5px;
+    padding-right: 10px;
+    order: 1;
+  }
+  
+  .browserButtonsHidden {
+    display: none;
+  }
+  
+  .browserDot {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .addressBar {
+    min-height: 28px;
+    padding: 4px 12px;
+    flex: 1 1 100%;
+    order: 3;
+    margin-top: 6px;
+    display: flex !important;
+  }
+  
+  .addressBarCompact {
+    min-height: 26px;
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+  
+  .addressTopic {
+    font-size: 13px;
+  }
+  
+  .addressTask {
+    font-size: 13px;
+  }
+  
+  .addressMode {
+    font-size: 12px;
+  }
+  
+  .browserControls {
+    flex-wrap: wrap;
+    gap: 4px;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    order: 2;
+  }
+  
+  .browserAction {
+    padding: 6px 8px;
+    font-size: 12px;
+    min-width: 36px;
+    height: 36px;
+  }
+  
+  .browserAction span {
+    display: none;
+  }
+
+  .content {
+    padding: 12px;
+  }
+
+  .footerControls {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
+    justify-content: space-between;
+  }
+  
+  .navigationControls {
+    width: 100%;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 8px;
+  }
+  
+  .footerActionButton {
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+  
+  .footerNavButton {
+    flex: 1;
+    max-width: 130px;
+    padding: 9px 12px;
+    font-size: 13px;
+    min-width: 95px;
+  }
+  
+  .footerActionButton {
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 8px;
+  }
+  
+  .browserHeader {
+    padding: 6px 8px;
+    min-height: 40px;
+    gap: 6px;
+    padding-left: 12px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .browserButtons {
+    gap: 4px;
+    padding-right: 8px;
+    order: 1;
+    align-self: flex-start;
+  }
+  
+  .browserButtonsHidden {
+    display: none;
+  }
+  
+  .browserDot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .addressBar {
+    min-height: 26px;
+    padding: 3px 8px;
+    margin-top: 4px;
+    order: 2;
+    display: flex !important;
+    width: 100%;
+  }
+  
+  .addressBarCompact {
+    min-height: 24px;
+    padding: 2px 6px;
+    font-size: 10px;
+  }
+  
+  .addressTopic {
+    font-size: 12px;
+  }
+  
+  .addressTask {
+    font-size: 12px;
+  }
+  
+  .addressMode {
+    font-size: 11px;
+  }
+  
+  .browserControls {
+    order: 3;
+    margin-top: 4px;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .browserAction {
+    padding: 4px 6px;
+    font-size: 11px;
+    min-width: 32px;
+    height: 32px;
+  }
+  
+  .footerControls {
+    gap: 10px;
+  }
+  
+  .footerNavButton {
+    font-size: 12px;
+    padding: 8px 10px;
+    min-width: 80px;
+  }
+  
+  .footerActionButton {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+  
+  .dropdown {
+    min-width: 160px;
+    max-height: 160px;
+  }
+  
+  .dropdownItem {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+} 
+
+.browserButtonsHidden {
+  display: none;
+}
+
+.addressBarCompact {
+  min-height: 24px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.addressBarCompact .addressTopic {
+  font-size: 12px;
+}
+
+.addressBarCompact .addressTask {
+  font-size: 12px;
+}
+
+.addressBarCompact .addressMode {
+  font-size: 11px;
+}
+
+@media (max-width: 768px) {
+  .browserButtonsHidden {
+    display: none !important;
+  }
+  
+  .addressBarCompact {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .browserHeader {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 1580px) {
+  .addressBarHidden {
+    display: none;
+  }
+  
+  .browserControlsCompact {
+    gap: 2px;
+    flex-wrap: wrap;
+  }
+  
+  .browserControlsCompact .browserAction {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+  
+  .browserControlsCompact .browserAction span {
+    display: none;
+  }
+  
+  .browserControlsCompact .browserSeparator {
+    display: none !important;
+  }
+  
+  .hiddenOnMedium {
+    display: none;
+  }
+  
+  .browserHeader {
+    min-height: 44px;
+    padding: 8px 12px;
+    flex-wrap: wrap;
+  }
+  
+  .browserButtonsHidden {
+    display: none;
+  }
+}
+
+.browserControlsCompact .browserAction {
+  padding: 6px 8px;
+  font-size: 11px;
+}
+
+.browserControlsCompact .browserAction span {
+  display: none;
+}
+
+.browserControlsCompact .browserSeparator {
+  display: none !important;
+}
+
+.browserControlsCompact {
+  gap: 2px;
+  justify-content: flex-end;
+}
+
+.solutionActiveAction {
+  background: #fbbf24 !important;
+  color: #92400e !important;
+  box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+}
+
+.solutionActiveAction:hover {
+  background: #f59e0b !important;
+  color: #78350f !important;
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+}
+
+.descriptionActiveAction {
+  background: #10b981 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.descriptionActiveAction:hover {
+  background: #059669 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.resetAction {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+}
+
+.resetAction:hover {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.footerActionButton.resetAction {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  border: 1px solid #dc2626;
+}
+
+.footerActionButton.resetAction:hover {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+@media (min-width: 1281px) {
+  .addressBarHidden {
+    display: none !important;
+  }
+  
+  .addressBarCompact {
+    display: flex;
+  }
+  
+  .browserButtonsHidden {
+    display: flex !important;
+  }
+  
+  .hiddenOnMedium {
+    display: flex;
+  }
+}
+
+@media (min-width: 1281px) {
+  .browserControlsCompact .browserAction {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  .browserControlsCompact {
+    gap: 4px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+} 
