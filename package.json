@@ -1,7 +1,8 @@
 {
-  "name": "@wannacode/local-ui",
-  "version": "0.0.1",
-  "description": "Local UI for WannaCode",
+  "name": "react-basics",
+  "version": "1.0.0",
+  "description": "Курс по изучению основ React с практическими заданиями",
+  "license": "MIT",
   "scripts": {
     "start": "next dev",
     "lint": "next lint",
