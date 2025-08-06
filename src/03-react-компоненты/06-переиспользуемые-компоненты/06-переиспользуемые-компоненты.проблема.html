@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Переиспользуемые компоненты</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            color: red;
+        }
+
+        .text {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script>
+        // Добавьте еще пару компонентов <Title> и <Text> в компонент <Container>.
+
+        const title = "Привет из React компонента!";
+        const text = "Это текст из компонента P";
+
+        function Title({text}) {
+            return <h1 className="title">{text}</h1>;
+        }
+
+        function Text({text}) {
+            return <p className="text">{text}</p>;
+        }
+
+        function Container({children}) {
+            return <div className="container">{children}</div>;
+        }
+
+        // Добавьте новые компоненты в Container по аналогии с первыми
+        const elements = <Container>
+            <Title text={title} />
+            <Text text={text} />
+        </Container>;
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+
+        root.render(elements);
+    </script>
+</body>
+</html>

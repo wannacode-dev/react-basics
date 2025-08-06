@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>React компоненты</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            color: red;
+        }
+
+        .text {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Изменить названия функций title на Title.
+        function title() {
+            return <h1 className="title">Привет из React!</h1>;
+        }
+
+        // Изменить названия функций text на Text.
+        function text() {
+            return <p className="text">Этот текст будет синим</p>;
+        }
+
+        // Изменить названия функций container на Container.
+        function container({children}) {
+            return <div className="container">{children}</div>;
+        }
+
+        // Это можно будет убрать
+        const titleElement = title(title);
+        const textElement = text(text);
+
+        // Это не нужно
+        const children = {
+            children: [titleElement, textElement]
+        }
+
+        /*
+            <Container>
+                <H1 />
+                <P />
+            </Container>
+        */
+        const elements = container(children);
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+
+        root.render(elements);
+    </script>
+</body>
+</html>

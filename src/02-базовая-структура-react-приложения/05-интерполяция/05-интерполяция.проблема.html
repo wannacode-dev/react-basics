@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Интерполяция в React</title>
+
+     
+
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            color: red;
+        }
+
+        .text {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Вынесите текст из элементов <h1> и <p> в переменные и используйте их в JSX
+        const container = <div className="container">
+            <h1 className="title">Привет из React!</h1>
+            <p className="text">Этот текст будет синим</p>
+        </div>
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+
+        root.render(container);
+    </script>
+</body>
+</html>

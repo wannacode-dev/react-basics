@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>React элементы в виде функций</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            color: red;
+        }
+
+        .text {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const title = "Привет из React!";
+        const text = "Этот текст будет синим";
+
+        function title(titleText) {
+            return <h1 className="title">{titleText}</h1>;
+        }
+
+        function text(text) {
+            return <p className="text">{text}</p>;
+        }
+
+        function container(titleText, textText) {
+            return <div className="container">{titleText}{textText}</div>;
+        }
+
+        const titleElement = title(title);
+        const textElement = text(text);
+
+        const elements = container(titleElement, textElement);
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+
+        root.render(elements);
+    </script>
+</body>
+</html>

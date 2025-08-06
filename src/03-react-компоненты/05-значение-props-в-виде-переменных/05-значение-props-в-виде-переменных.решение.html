@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Значение props в виде переменных</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            color: red;
+        }
+
+        .text {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const title = "Привет из React компонента!";
+        const text = "Это текст из компонента P";
+
+        function Title({text}) {
+            return <h1 className="title">{text}</h1>;
+        }
+
+        function Text({text}) {
+            return <p className="text">{text}</p>;
+        }
+
+        function Container({children}) {
+            return <div className="container">{children}</div>;
+        }
+
+        const elements = <Container>
+            <Title text={title} />
+            <Text text={text} />
+        </Container>;
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+
+        root.render(elements);
+    </script>
+</body>
+</html>

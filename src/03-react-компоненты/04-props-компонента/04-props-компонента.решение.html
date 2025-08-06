@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Props компонента</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            color: red;
+        }
+
+        .text {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function Title({text}) {
+            return <h1 className="title">{text}</h1>;
+        }
+
+        function Text({text}) {
+            return <p className="text">{text}</p>;
+        }
+
+        function Container({children}) {
+            return <div className="container">{children}</div>;
+        }
+
+        const elements = <Container>
+            <Title text="Привет из React компонента!" />
+            <Text text="Это текст из компонента P" />
+        </Container>;
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+
+        root.render(elements);
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<TaskLayout 
+  title="Вложенные React элементы"
+  description="Изучаем работу с props.children - специальным свойством React для передачи элементов внутрь других элементов."
+>
+
+<TaskObjective>
+
+Измените код из предыдущего задания, чтобы использовать `props.children` для передачи элементов внутрь контейнера.
+
+</TaskObjective>
+
+<Info>
+
+**props.children** — специальное свойство React для работы с вложенными элементами:
+
+- `props` — объект со всеми переданными свойствами в функцию
+- `props.children` — содержит все вложенные элементы
+- Может быть один элемент, массив элементов или строка
+- React автоматически обрабатывает и отображает содержимое children
+
+Это более гибкий способ создания переиспользуемых контейнеров.
+
+</Info>
+
+<CodeExample title="Использование props.children">
+
+```javascript
+// Функция контейнера с props.children
+function Container(props) {
+  return <div className="container">
+    {props.children}
+  </div>;
+}
+
+// Функции для элементов остаются прежними
+function Title(text) {
+  return <h1 className="title">{text}</h1>;
+}
+
+function Text(text) {
+  return <p className="text">{text}</p>;
+}
+
+// Использование с props.children
+const h1Text = "Привет из React!";
+const pText = "Этот текст будет синим";
+
+const title = Title(h1Text);
+const text = Text(pText);
+
+// Передаем элементы через children
+const container = Container({ 
+  children: [title, text] 
+});
+
+// Рендеринг
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(container);
+```
+
+</CodeExample>
+
+<TaskLinks 
+  title="📚 Материалы для изучения"
+  links={[
+    {
+      title: "Передача JSX как children",
+      url: "https://ru.react.dev/learn/passing-props-to-a-component#passing-jsx-as-children",
+      description: "Как передавать JSX элементы как children"
+    },
+    {
+      title: "Передача пропсов в компонент",
+      url: "https://ru.react.dev/learn/passing-props-to-a-component",
+      description: "Полное руководство по работе с props в React"
+    }
+  ]}
+/>
+
+</TaskLayout> 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление класса в React</title>
+    <style>
+        .title {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script>
+        const h1 = React.createElement('h1', { className: 'title' }, 'Привет из React!');
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+
+        root.render(h1);
+    </script>
+</body>
+</html>

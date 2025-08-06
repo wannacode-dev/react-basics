@@ -1,0 +1,85 @@
+<TaskLayout 
+  title="React вместе с JSX"
+  description="Знакомство с JSX синтаксисом для написания React элементов. JSX делает код намного проще и понятнее."
+>
+
+<TaskObjective>
+
+Переписать предыдущий код с createElement на JSX синтаксис, получив тот же результат более простым способом.
+
+</TaskObjective>
+
+<Info>
+
+**JSX** — это расширение JavaScript, которое позволяет писать HTML-подобный код прямо в JavaScript. Babel превращает JSX в вызовы `React.createElement()`.
+
+Основные отличия от HTML:
+- `className` вместо `class` 
+- `type="text/babel"` в script теге для обработки JSX
+- Все теги должны быть закрыты (`<br />`, `<img />`)
+- camelCase для событий (`onClick`, `onMouseOver`)
+
+JSX намного проще читать и писать, чем множественные вызовы createElement.
+
+</Info>
+
+<CodeExample title="Сравнение createElement и JSX">
+
+```javascript
+// Старый способ с createElement
+const elementOld = React.createElement('div', { className: 'container' },
+  React.createElement('h1', { className: 'title' }, 'Привет из React!'),
+  React.createElement('p', { className: 'text' }, 'Этот текст будет синим')
+);
+
+// Новый способ с JSX (намного проще!)
+const element = (
+  <div className="container">
+    <h1 className="title">Привет из React!</h1>
+    <p className="text">Этот текст будет синим</p>
+  </div>
+);
+
+// Рендеринг одинаковый
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(element);
+```
+
+</CodeExample>
+
+<Warning>
+
+**Важно!** Не забудьте добавить атрибут `type="text/babel"` в ваш script тег:
+
+```html
+<script type="text/babel">
+  // Ваш JSX код здесь
+</script>
+```
+
+Без этого браузер не сможет понять JSX синтаксис.
+
+</Warning>
+
+<TaskLinks 
+  title="📚 Материалы для изучения"
+  links={[
+    {
+      title: "Написание разметки с JSX",
+      url: "https://ru.react.dev/learn/writing-markup-with-jsx",
+      description: "Официальное руководство по написанию разметки с JSX"
+    },
+    {
+      title: "JavaScript в JSX",
+      url: "https://ru.react.dev/learn/javascript-in-jsx-with-curly-braces",
+      description: "Как использовать JavaScript выражения в JSX"
+    },
+    {
+      title: "JSX подробно",
+      url: "https://legacy.reactjs.org/docs/jsx-in-depth.html",
+      description: "Подробное изучение возможностей JSX"
+    }
+  ]}
+/>
+
+</TaskLayout> 
