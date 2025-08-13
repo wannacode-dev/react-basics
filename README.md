@@ -27,7 +27,7 @@
 Скопируйте и выполните эти команды в терминале:
 
 ```sh nonumber
-git clone --depth 1 https://github.com/wannacode/react-basics.git
+git clone --depth 1 https://github.com/wannacode-dev/react-basics.git
 cd react-basics
 npm run setup
 ```
