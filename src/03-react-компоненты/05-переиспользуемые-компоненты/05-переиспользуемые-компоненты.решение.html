@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Значение props в виде переменных</title>
+    <title>Переиспользуемые компоненты</title>
     <style>
         .container {
             display: flex;
@@ -24,8 +24,14 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        const title = "Привет из React компонента!";
-        const text = "Это текст из компонента P";
+        const heading = "Привет из React компонента!";
+        const paragraph = "Это текст из компонента P";
+
+        const myFirstComponentText = "Это мой первый компонент!";
+        const mySecondComponentText = "Я создал переменную сам!";
+
+        const mySecondComponentText2 = "Это мой второй компонент!";
+        const mySecondComponentText3 = "Я создал компонент сам!";
 
         function Title({text}) {
             return <h1 className="title">{text}</h1>;
@@ -40,8 +46,14 @@
         }
 
         const elements = <Container>
-            <Title text={title} />
-            <Text text={text} />
+            <Title text={heading} />
+            <Text text={paragraph} />
+
+            <Title text={myFirstComponentText} />
+            <Text text={mySecondComponentText} />
+
+            <Title text={mySecondComponentText} />
+            <Text text={mySecondComponentText} />
         </Container>;
 
         const root = ReactDOM.createRoot(document.getElementById('root'));

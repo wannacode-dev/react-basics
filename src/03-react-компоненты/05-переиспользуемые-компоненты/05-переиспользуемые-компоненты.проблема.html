@@ -23,15 +23,11 @@
 <body>
     <div id="root"></div>
 
-    <script type="text/babel">
-        const title = "Привет из React компонента!";
-        const text = "Это текст из компонента P";
+    <script>
+        // Добавьте еще пару компонентов <Title> и <Text> в компонент <Container>.
 
-        const myFirstComponentText = "Это мой первый компонент!";
-        const mySecondComponentText = "Я создал переменную сам!";
-
-        const mySecondComponentText2 = "Это мой второй компонент!";
-        const mySecondComponentText3 = "Я создал компонент сам!";
+        const heading = "Привет из React компонента!";
+        const paragraph = "Это текст из компонента P";
 
         function Title({text}) {
             return <h1 className="title">{text}</h1>;
@@ -45,15 +41,10 @@
             return <div className="container">{children}</div>;
         }
 
+        // Добавьте новые компоненты в Container по аналогии с первыми
         const elements = <Container>
-            <Title text={title} />
-            <Text text={text} />
-
-            <Title text={myFirstComponentText} />
-            <Text text={mySecondComponentText} />
-
-            <Title text={mySecondComponentText} />
-            <Text text={mySecondComponentText} />
+            <Title text={heading} />
+            <Text text={paragraph} />
         </Container>;
 
         const root = ReactDOM.createRoot(document.getElementById('root'));

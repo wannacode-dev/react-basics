@@ -24,13 +24,13 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        const title = "Привет из React!";
-        const text = "Этот текст будет синим";
+        const heading = "Привет из React!";
+        const paragraph = "Этот текст будет синим";
 
         //Вынести <h1> в отдельные функцию и передать в нее текст через аргумент.
-        const titleElement = <h1 className="title">{title}</h1>;
+        const titleElement = <h1 className="title">{heading}</h1>;
         // Вынести <p> в отдельные функцию и передать в нее текст через аргумент.
-        const textElement = <p className="text">{text}</p>;
+        const textElement = <p className="text">{paragraph}</p>;
 
         //Создать функцию для <div> и передать в нее <h1> и <p> через аргументы
         const container = <div className="container">

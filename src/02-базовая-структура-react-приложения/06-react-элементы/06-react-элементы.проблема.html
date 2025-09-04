@@ -27,13 +27,13 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        const title = "Привет из React!";
-        const text = "Этот текст будет синим";
+        const heading = "Привет из React!";
+        const paragraph = "Этот текст будет синим";
 
         const container = <div className="container">
             {/*Вынесите элементы <h1> и <p> в отдельные переменные и используйте их в JSX*/}
-            <h1 className="title">{title}</h1>
-            <p className="text">{text}</p>
+            <h1 className="title">{heading}</h1>
+            <p className="text">{paragraph}</p>
         </div>
 
         const root = ReactDOM.createRoot(document.getElementById('root'));

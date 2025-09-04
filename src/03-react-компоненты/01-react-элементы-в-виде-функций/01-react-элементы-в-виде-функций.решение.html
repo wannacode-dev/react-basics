@@ -24,8 +24,8 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        const title = "Привет из React!";
-        const text = "Этот текст будет синим";
+        const heading = "Привет из React!";
+        const paragraph = "Этот текст будет синим";
 
         function title(titleText) {
             return <h1 className="title">{titleText}</h1>;
@@ -39,8 +39,8 @@
             return <div className="container">{titleText}{textText}</div>;
         }
 
-        const titleElement = title(title);
-        const textElement = text(text);
+        const titleElement = title(heading);
+        const textElement = text(paragraph);
 
         const elements = container(titleElement, textElement);
 

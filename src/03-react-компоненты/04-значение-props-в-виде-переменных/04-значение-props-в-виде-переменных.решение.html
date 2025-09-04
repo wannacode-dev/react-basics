@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Вложенные React элементы</title>
+    <title>Значение props в виде переменных</title>
     <style>
         .container {
             display: flex;
@@ -24,30 +24,25 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        const h1Text = "Привет из React!";
-        const pText = "Этот текст будет синим";
+        const heading = "Привет из React компонента!";
+        const paragraph = "Это текст из компонента P";
 
-        function title(text) {
+        function Title({text}) {
             return <h1 className="title">{text}</h1>;
         }
 
-        function text(text) {
+        function Text({text}) {
             return <p className="text">{text}</p>;
         }
 
-
-        function container({children}) {
+        function Container({children}) {
             return <div className="container">{children}</div>;
         }
 
-        const titleElement = title(title);
-        const textElement = text(text);
-
-        const children = {
-            children: [titleElement, textElement]
-        }
-
-        const elements = container(children);
+        const elements = <Container>
+            <Title text={heading} />
+            <Text text={paragraph} />
+        </Container>;
 
         const root = ReactDOM.createRoot(document.getElementById('root'));
 
