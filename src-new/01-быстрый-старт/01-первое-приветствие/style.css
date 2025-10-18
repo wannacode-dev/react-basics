@@ -1,0 +1,49 @@
+/* Контейнер всего приложения */
+.app-container {
+    min-height: 100vh;
+    background-color: #e0f2fe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Карточка приветствия */
+.welcome-card {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 40px;
+    border: 3px solid #3b82f6;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #f0f9ff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Эмодзи */
+.emoji {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+/* Заголовок с именем */
+.title {
+    font-size: 28px;
+    color: #1f2937;
+    margin: 0 0 10px 0;
+}
+
+/* Роль/должность */
+.role {
+    font-size: 18px;
+    color: #3b82f6;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+}
+
+/* Приветственный текст */
+.description {
+    font-size: 16px;
+    color: #6b7280;
+    margin: 0;
+}
+

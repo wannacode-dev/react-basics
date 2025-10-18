@@ -1,0 +1,207 @@
+/* Контейнер приложения */
+.app-container {
+    min-height: 100vh;
+    background-color: #f3f4f6;
+    padding: 40px 20px;
+}
+
+/* Основной контейнер */
+.search-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.search-container h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1f2937;
+    font-size: 36px;
+}
+
+/* Поисковая панель */
+.search-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 16px 50px 16px 20px;
+    font-size: 18px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.2s;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.search-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #9ca3af;
+}
+
+/* Индикатор загрузки */
+.loading-indicator {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: translateY(-50%) rotate(0deg); }
+    to { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Выпадающий список */
+.autocomplete-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 2px solid #e5e7eb;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.autocomplete-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.autocomplete-item:hover {
+    background-color: #f3f4f6;
+}
+
+.autocomplete-item:active {
+    background-color: #e5e7eb;
+}
+
+.autocomplete-item .highlight {
+    background-color: #fef3c7;
+    font-weight: bold;
+    color: #92400e;
+}
+
+/* Результаты поиска */
+.search-results {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.results-header {
+    margin-bottom: 20px;
+    color: #6b7280;
+}
+
+.results-header strong {
+    color: #1f2937;
+}
+
+/* Список стран */
+.countries-list {
+    display: grid;
+    gap: 15px;
+}
+
+.country-item {
+    padding: 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.country-item:hover {
+    border-color: #3b82f6;
+    transform: translateX(5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.country-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.country-flag {
+    font-size: 40px;
+}
+
+.country-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1f2937;
+    margin: 0;
+}
+
+.country-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    color: #6b7280;
+}
+
+.info-item {
+    display: flex;
+    gap: 5px;
+}
+
+.info-label {
+    font-weight: 500;
+    color: #374151;
+}
+
+/* Пустой результат */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #9ca3af;
+}
+
+.empty-state .icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.empty-state h3 {
+    color: #6b7280;
+    margin: 0 0 10px 0;
+}
+
+.empty-state p {
+    margin: 0;
+}
+
+/* Подсказка */
+.search-hint {
+    text-align: center;
+    color: #9ca3af;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+

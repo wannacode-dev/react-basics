@@ -1,0 +1,73 @@
+/* Контейнер приложения */
+.app-container {
+    min-height: 100vh;
+    background-color: #f9fafb;
+    padding: 50px 20px;
+}
+
+/* Основной контейнер */
+.accordion-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.accordion-container h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1f2937;
+    font-size: 36px;
+}
+
+/* Элемент аккордеона */
+.accordion-item {
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+/* Заголовок (кнопка) */
+.accordion-header {
+    width: 100%;
+    padding: 20px;
+    background-color: #f9fafb;
+    border: none;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.accordion-header:hover {
+    background-color: #f3f4f6;
+}
+
+.accordion-header.open {
+    background-color: #eff6ff;
+    color: #3b82f6;
+}
+
+.accordion-icon {
+    font-size: 24px;
+    transition: transform 0.3s;
+    display: inline-block;
+}
+
+.accordion-icon.open {
+    transform: rotate(90deg);
+}
+
+/* Контент */
+.accordion-content {
+    padding: 20px;
+    background-color: white;
+    color: #6b7280;
+    line-height: 1.6;
+    border-top: 1px solid #e5e7eb;
+}
+

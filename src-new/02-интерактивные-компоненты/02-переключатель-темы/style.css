@@ -1,0 +1,87 @@
+/* Контейнер приложения */
+.theme-container {
+    min-height: 100vh;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.theme-container.light {
+    background-color: #ffffff;
+    color: #1f2937;
+}
+
+.theme-container.dark {
+    background-color: #1f2937;
+    color: #ffffff;
+}
+
+/* Заголовок */
+.theme-container h1 {
+    margin-bottom: 20px;
+}
+
+.theme-container p {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+/* Кнопка переключения */
+.theme-toggle-button {
+    font-size: 48px;
+    padding: 20px 40px;
+    border: 3px solid;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.3s;
+}
+
+.theme-toggle-button.light {
+    border-color: #1f2937;
+    color: #1f2937;
+}
+
+.theme-toggle-button.dark {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.theme-toggle-button:hover {
+    transform: scale(1.1) rotate(20deg);
+}
+
+/* Демо контент */
+.demo-content {
+    margin-top: 40px;
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid;
+    max-width: 500px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.demo-content.light {
+    border-color: #e5e7eb;
+    background-color: #f9fafb;
+}
+
+.demo-content.dark {
+    border-color: #374151;
+    background-color: #374151;
+}
+
+.demo-content h3 {
+    margin-top: 0;
+}
+
+.demo-content p {
+    line-height: 1.6;
+    margin-top: 10px;
+    opacity: 0.7;
+}
+

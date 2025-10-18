@@ -1,0 +1,164 @@
+/* Контейнер приложения */
+.app-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Форма контакта */
+.contact-form {
+    max-width: 600px;
+    width: 100%;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+}
+
+.contact-form h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #1f2937;
+    text-align: center;
+    font-size: 32px;
+}
+
+.contact-form > p {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+
+/* Группа полей формы */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #374151;
+    font-weight: 500;
+}
+
+.form-group label .required {
+    color: #ef4444;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #667eea;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Ошибка валидации */
+.form-group.error input,
+.form-group.error textarea,
+.form-group.error select {
+    border-color: #ef4444;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Чекбокс согласия */
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.form-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.form-checkbox label {
+    color: #6b7280;
+    cursor: pointer;
+}
+
+/* Кнопка отправки */
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-button:hover:not(:disabled) {
+    background-color: #5568d3;
+}
+
+.submit-button:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Сообщение об успехе */
+.success-message {
+    background-color: #d1fae5;
+    border: 2px solid #10b981;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.success-message h3 {
+    color: #065f46;
+    margin: 0 0 10px 0;
+}
+
+.success-message p {
+    color: #047857;
+    margin: 0;
+}
+
+/* Информационная панель */
+.form-info {
+    background-color: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+.form-info p {
+    margin: 0;
+    color: #1e40af;
+    font-size: 14px;
+}
+

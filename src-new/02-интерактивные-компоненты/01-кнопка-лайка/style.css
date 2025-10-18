@@ -1,0 +1,72 @@
+/* Контейнер приложения */
+.app-container {
+    min-height: 100vh;
+    background-color: #f9fafb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Карточка с кнопкой лайка */
+.like-card {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 40px;
+    text-align: center;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.like-card h2 {
+    margin-top: 0;
+    color: #1f2937;
+}
+
+.like-card p {
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+
+/* Кнопка лайка */
+.like-button {
+    font-size: 48px;
+    padding: 20px 40px;
+    border: 3px solid #e5e7eb;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: #f3f4f6;
+}
+
+.like-button.liked {
+    background-color: #fee2e2;
+    border-color: #ef4444;
+}
+
+.like-button:hover {
+    transform: scale(1.1);
+}
+
+/* Счётчик лайков */
+.likes-count {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #6b7280;
+}
+
+.likes-count strong {
+    color: #1f2937;
+}
+
+.likes-count strong.liked {
+    color: #ef4444;
+}
+
+/* Сообщение благодарности */
+.thank-you-message {
+    margin-top: 20px;
+    color: #ef4444;
+    font-weight: bold;
+}
+
